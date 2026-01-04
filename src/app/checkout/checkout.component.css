@@ -1,0 +1,496 @@
+/* === Layout général === */
+.checkout-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 40px;
+  gap: 40px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Colonne gauche (ACCOUNT + DELIVERY) */
+.checkout-left {
+  flex: 2;
+}
+
+.account-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #fefaf4;
+  border: 1px solid #eee;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.account-label {
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
+.account-email {
+  color: #333;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+
+/* Colonne droite (SUMMARY) */
+
+
+/* === Header avec logo + stepper === */
+.stepper-container {
+  background-color: #f5f0ea;
+  padding: 20px 30px 10px;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.stepper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stepper-logo img {
+  height: 50px;
+}
+
+.back-link {
+  font-size: 14px;
+  color: #444;
+  text-decoration: none;
+}
+
+.stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.step {
+  font-size: 12px;
+  color: #999;
+  padding: 0 60px;
+  position: relative;
+}
+
+.step.active {
+  color: #000;
+  font-weight: bold;
+}
+
+.step::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #999;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.step.active::before {
+  border-color: #000;
+}
+
+.stepper::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background-color: #ccc;
+  z-index: 0;
+}
+
+/* === Onglets livraison === */
+.delivery-tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+}
+
+/* === Formulaire === */
+.hermes-delivery-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.hermes-delivery-form .form-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.hermes-delivery-form label.required::after {
+  content: '*';
+  color: red;
+  margin-left: 4px;
+}
+.form-cell.no-label select {
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  background-color: #fff;
+  color: #333;
+}
+
+
+.hermes-delivery-form input,
+.hermes-delivery-form select {
+  padding: 10px 100px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hermes-delivery-form .form-cell.full-width {
+  grid-column: span 2;
+}
+
+
+.hermes-delivery-form .form-cell.double-width {
+  grid-column: span 2;
+}
+
+
+
+
+.validate-btn {
+  margin-top: 20px;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* === Résumé (SUMMARY) === */
+
+
+.country-indicator {
+  font-size: 12px;
+  color: #555;
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.country-code {
+  font-weight: bold;
+}
+.summary-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+
+.summary-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.details .name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.details .info {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+/* Tabs stylés */
+.delivery-tabs {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fcf9f3;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.tab-icon {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.tab-label {
+  font-weight: 500;
+}
+
+.tab.active {
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  color: #000;
+}
+
+.form-warning {
+  padding: 12px;
+  background-color: #fff2f2;
+  border: 1px solid #f5c2c2;
+  color: #aa0000;
+  font-size: 14px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+.section-box {
+  background-color: #fefaf4;
+  padding: 30px ;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  width: 100%;              /* ✅ largeur pleine */
+  box-sizing: border-box;   /* ✅ pour ne pas dépasser */
+}
+
+
+
+
+/* ✅ Partie des produits : cachée sauf si isSummaryOpen */
+.summary-card {
+  background-color: #fefaf4;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 400px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+
+  /* 👇 compact par défaut */
+  max-height: 250px;
+  padding-bottom: 0;
+}
+
+.summary-card.expanded {
+  /* 👇 s’étend uniquement quand isSummaryOpen = true */
+  max-height: 1000px;
+  padding-bottom: 20px;
+}
+
+.summary-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #fefaf4;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.summary-products {
+  padding: 20px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.summary-totals {
+  padding: 20px 24px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.total-row {
+  font-weight: bold;
+  font-size: 16px;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
+
+/* === Conteneur général === */
+.checkout-form {
+   max-width: 900px;
+  margin: 80px auto;
+  background-color: #fefaf4;
+    padding: 100px; /* ← plus de padding interne */
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #2c2c2c;
+}
+
+/* === Titre === */
+.checkout-form h2 {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* === Paragraphe de description === */
+.checkout-form p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: #444;
+}
+
+/* === Label === */
+.checkout-form label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+/* === Champ input === */
+.checkout-form input[type="email"] {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.checkout-form input[type="email"]:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.checkout-form input.invalid {
+  border-color: #b00020;
+}
+
+/* === Message d’erreur === */
+.checkout-form .error-message {
+  color: #b00020;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* === Bouton === */
+.checkout-form button {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkout-form button:hover {
+  background-color: #333;
+}
+
+.checkout-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.checkout-form input[type="text"] {
+ width: 100%;
+    padding: 12px 10px;
+
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  margin: 16px auto;
+  display: block;
+}
+
+.checkout-form input[type="text"]:focus {
+  border-color: #000;
+  outline: none;
+}
+.confirm-order-button {
+  display: inline-block;
+  width: 100%;
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+   margin-top: 40px;
+}
+
+.confirm-order-button:hover {
+  background-color: #222;
+  transform: translateY(-2px);
+}
+
+.confirm-order-button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}

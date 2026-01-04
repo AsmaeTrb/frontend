@@ -1,0 +1,60 @@
+<div class="register-container">
+  <h1>CRÉER UN COMPTE</h1>
+  <p class="subtitle">
+    En créant un compte, vous acceptez les
+    <a href="#">Conditions Générales d’Utilisation</a>
+    et la <a href="#">Politique de confidentialité</a>.
+  </p>
+
+  <form (ngSubmit)="register()" class="form-grid">
+    <!-- Colonne 1 -->
+    <div class="column">
+      <h3>INFORMATIONS DE CONNEXION</h3>
+      <label>Email *</label>
+      <input type="email" [(ngModel)]="email" name="email" required [readonly]="email !== ''" />
+
+      <label>Mot de passe *</label>
+      <input type="password" [(ngModel)]="password" name="password" required />
+      <!-- Confirmer mot de passe -->
+<input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required />
+
+      <p class="hint">Au moins 10 caractères, 1 majuscule, 1 minuscule, 1 chiffre, 1 caractère spécial</p>
+
+      <h3>INFORMATIONS PERSONNELLES</h3>
+      <label>Genre *</label>
+      <select [(ngModel)]="gender" name="gender" required>
+        <option value="">-- Choisir --</option>
+        <option value="Homme">Homme</option>
+        <option value="Femme">Femme</option>
+      </select>
+
+      <label>Téléphone *</label>
+      <input type="tel" [(ngModel)]="phone" name="phone" placeholder="+212 612345678" required />
+
+      <label>Date de naissance *</label>
+      <input type="date" [(ngModel)]="birthDate" name="birthDate" required />
+    </div>
+
+    <!-- Colonne 2 -->
+    <div class="column">
+      <h3>COORDONNÉES DE FACTURATION</h3>
+
+      <label>Pays *</label>
+      <select [(ngModel)]="selectedCountry" name="selectedCountry" required>
+        <option *ngFor="let c of country" [value]="c.name">{{ c.name }}</option>
+      </select>
+
+      <label>Adresse *</label>
+      <input type="text" [(ngModel)]="address" name="address" required />
+
+      <label>Ville *</label>
+      <input type="text" [(ngModel)]="city" name="city" required />
+    </div>
+
+    <!-- Bas du formulaire -->
+    <div class="full-width">
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <button type="submit">CRÉER UN COMPTE</button>
+    </div>
+  </form>
+</div>

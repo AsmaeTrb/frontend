@@ -1,0 +1,93 @@
+<div class="stepper-container">
+  <a class="back-link" (click)="goBack()">← Back</a>
+
+ <div class="stepper-logo">
+  <a routerLink="/">
+    <img src="assets/logo.png" alt="Hermès Paris">
+  </a>
+</div>
+
+  <div class="stepper">
+    <div class="step active">CART</div>
+    <div class="step">CHECKOUT</div>
+    <div class="step">CONFIRMATION</div>
+  </div>
+  npm install  nodemailer
+</div>
+<div class="cart-container">
+
+  <p *ngIf="cartItems.length === 0">Votre panier est vide</p>
+
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <img [src]="item.image" alt="{{item.name}}" class="cart-image">
+    
+    <div class="cart-details">
+      <h4>{{item.name}}</h4>
+      <p>Couleur: {{item.color}}</p>
+      <p>Taille: {{item.size}}</p>
+      <p>Réf: {{item.reference}}</p>
+      
+      <div *ngIf="item.delay" class="delivery-warning">
+        <p>Cet article aura un délai de livraison de {{item.delay}} jours</p>
+      </div>
+      
+      <div class="quantity-control">
+        <button (click)="decreaseQty(item)" 
+                [disabled]="item.quantity <= 1"
+                aria-label="Réduire la quantité">-</button>
+        <span>{{item.quantity}}</span>
+        <button (click)="increaseQty(item)" 
+                [disabled]="item.quantity >= item.stock"
+                aria-label="Augmenter la quantité">+</button>
+      </div>
+      
+      <button class="remove-btn" (click)="removeItem(item)">
+        Supprimer
+      </button>
+    </div>
+    
+    <div class="item-price">
+      {{formatPrice(item.price * item.quantity)}}
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="summary-row">
+      <span>SOUS-TOTAL</span>
+      <span>{{formatPrice(getSubtotal())}}</span>
+    </div>
+    
+    <div class="summary-row">
+      <span>LIVRAISON</span>
+      <span>Calculée à la commande</span>
+    </div>
+  
+    
+    <div class="summary-row total">
+      <span>TOTAL</span>
+      <span>{{formatPrice(getTotal())}}</span>
+    </div>
+    
+    <div class="gifting-option">
+      <input type="checkbox" id="gift" [(ngModel)]="isGift">
+      <label for="gift">Emballage cadeau</label>
+    </div>
+    
+    <button class="checkout-btn" (click)="checkout()">
+      PASSER LA COMMANDE
+    </button>
+    
+  
+  
+  <div class="customer-service">
+    <h3>SERVICE CLIENT</h3>
+    <p>Lundi à vendredi 9h - 21h EST. Samedi 10h - 21h EST:</p>
+    <p><strong>800-44-14488</strong></p>
+    
+    <div class="service-features">
+      <p>Livraison standard gratuite</p>
+      <p>Retours & échanges</p>
+      <p>Achat sécurisé</p>
+    </div>
+  </div>
+</div>

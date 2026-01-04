@@ -1,0 +1,35 @@
+<!-- ✅ BANNIÈRE EN HAUT -->
+<div class="category-banner">
+  <img [src]="'assets/banners/' + category.toLowerCase() + '.jpg'"
+       [alt]="category"
+       class="category-banner-image">
+<div class="banner-title-overlay">
+  <button class="scroll-link" (click)="scrollToProducts()">DÉCOUVERTE</button>
+</div>
+  
+</div>
+
+<!-- ✅ CONTENU DES PRODUITS -->
+<div class="hermes-container"id="scroll-products">
+  <div class="hermes-products">
+    <a *ngFor="let product of filteredProducts" 
+       [routerLink]="['/product', product.id]" 
+       class="hermes-product-card" 
+       style="text-decoration: none; color: inherit;">
+      
+      <div class="hermes-product-image-container">
+        <img [src]="product.image1" [alt]="product.name" class="hermes-product-image front-image">
+        <img [src]="product.image2" [alt]="product.name" class="hermes-product-image back-image">
+      </div>
+      
+      <div class="hermes-product-info">
+        <h3 class="hermes-product-name">{{ product.name }}</h3>
+        <h3 class="hermes-product-name">{{ product.price }} €</h3>
+        <div class="hermes-product-badges">
+          <span *ngIf="hasLowStock(product)" class="urgent">.</span>
+        </div>
+      </div>
+
+    </a>
+  </div>
+</div>

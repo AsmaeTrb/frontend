@@ -1,0 +1,93 @@
+<div class="admin-panel">
+  <!-- Onglets navigation -->
+  <div class="tabs">
+    <button [class.active]="activeTab === 'orders'" (click)="activeTab = 'orders'">📦 Commandes</button>
+    <button [class.active]="activeTab === 'products'" (click)="activeTab = 'products'">🛍️ Produits</button>
+  </div>
+
+  <!-- Section Commandes -->
+  <section *ngIf="activeTab === 'orders'" class="orders-section">
+    <div *ngFor="let order of orders" class="order-card">
+      <div class="order-header">
+        <span><strong>#{{ order.id }}</strong> - {{ order.email }}</span>
+        <button (click)="validateOrder(order.id)" class="validate-btn">Valider ✅</button>
+      </div>
+<ul class="order-items">
+  <li *ngFor="let item of order.items" class="order-item">
+    <!-- ✅ Image du produit -->
+    <img [src]="item.image" class="order-image" alt="{{ item.name }}" />
+
+    <!-- ✅ Détails -->
+    <div class="order-details">
+      <p><strong>{{ item.name }}</strong></p>
+      <p>Taille : {{ item.size }}</p>
+      <p>Quantité : {{ item.quantity }}</p>
+    </div>
+  </li>
+</ul>
+
+      <p><strong>Total : {{ order.total | currency:'EUR' }}</strong></p>
+    </div>
+  </section>
+
+  <!-- Section Produits -->
+  <section *ngIf="activeTab === 'products'" class="products-section">
+    <div class="product-header">
+      <button class="add-btn" (click)="openAddModal()">+ Ajouter un produit</button>
+    </div>
+
+    <div class="products-grid">
+      <div *ngFor="let product of products" class="product-card">
+        <img [src]="product.image1" alt="Produit" class="product-image" />
+        <h4>{{ product.name }}</h4>
+    <div *ngIf="hasOutOfStock(product)" class="badge-out">
+  ❌ Rupture de stock
+</div>
+        <p>{{ product.price | currency:'EUR' }}</p>
+        <div class="product-actions">
+          <button (click)="editProduct(product.id)">✏️ Modifier</button>
+          <button (click)="deleteProduct(product.id)">🗑️ Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Ajout/Modification Produit -->
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h3>{{ isEditing ? 'Modifier' : 'Ajouter' }} un produit</h3>
+      <form (ngSubmit)="handleProductSubmit()" class="product-form">
+  <input [(ngModel)]="newProduct.name" name="name" placeholder="Nom du produit" required>
+  <input [(ngModel)]="newProduct.price" name="price" placeholder="Prix (€)" type="number" required>
+  <input [(ngModel)]="newProduct.color" name="color" placeholder="Couleur">
+  <input [(ngModel)]="newProduct.origin" name="origin" placeholder="Origine">
+  <textarea [(ngModel)]="newProduct.description" name="description" placeholder="Description"></textarea>
+
+  <!-- Upload fichiers image (base64) -->
+  <label>Image principale :</label>
+<input [(ngModel)]="newProduct.image1" name="image1" placeholder="ex: ./assets/robe1.jpg" />
+
+  <label>Deuxième image :</label>
+<input [(ngModel)]="newProduct.image2" name="image2" placeholder="ex: ./assets/robe1.jpg" />
+
+  <input [(ngModel)]="newProduct.category" name="category" placeholder="Catégorie">
+
+ <div *ngFor="let size of newProduct.sizes; let i = index" class="size-row">
+  <input [(ngModel)]="size.size" [name]="'size'+i" placeholder="Taille" required>
+  <input [(ngModel)]="size.quantity" [name]="'quantity'+i" type="number" placeholder="Quantité" required>
+  <button type="button" (click)="removeSize(i)" *ngIf="newProduct.sizes.length > 1">❌</button>
+</div>
+
+<button type="button" class="add-btn" (click)="addSize()">➕ Ajouter une taille</button>
+
+  <div class="form-actions">
+    <button type="submit" class="save-btn">{{ isEditing ? 'Modifier' : 'Ajouter' }}</button>
+    <button type="button" class="cancel-btn" (click)="closeModal()">Annuler</button>
+  </div>
+</form>
+
+
+    </div>
+  </div>
+</div>

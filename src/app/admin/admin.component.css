@@ -1,0 +1,282 @@
+.admin-panel {
+  max-width: 1200px;
+    margin: 100px auto 40px; /* ← ajout de 100px en haut */
+
+  padding: 2rem;
+  background: #fefaf4;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-title {
+  font-size: 24px;
+  margin-bottom: 1rem;
+  color: #2c2c2c;
+}
+
+.tabs {
+ margin-top: 40px; /* ← augmente si tu veux plus d’espace */
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
+}
+.tabs button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.tabs button.active {
+  background: #333;
+  color: white;
+}
+
+.order-card, .product-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.validate-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  justify-content: space-between;
+  flex-wrap: wrap; /* utile pour petit écran */
+}
+
+/* Colonne de gauche : image */
+.product-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+    object-position: top center;
+}
+
+/* Centre : infos produit */
+.product-info {
+  flex: 1;
+  min-width: 200px;
+}
+.product-info h4 {
+  margin: 0;
+  font-size: 20px;
+  color: #222;
+}
+.product-info p {
+  font-size: 17px;
+  margin-top: 6px;
+  color: #555;
+}
+
+/* Colonne droite : boutons */
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.product-actions button {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  white-space: nowrap;
+}
+.product-actions button:first-child {
+  background-color: #007bff; /* bleu */
+}
+.product-actions button:last-child {
+  background-color: #dc3545; /* rouge */
+}
+
+.product-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+.add-btn {
+  background: #000;
+  color: white;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.order-card:hover,
+.product-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+.order-items {
+  padding: 0;
+  margin: 1rem 0 0;
+  list-style: none;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.order-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+.order-details p {
+  margin: 0;
+  font-size: 14px;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; /* ← pour largeur complète */
+  bottom: 0; /* ← pour hauteur complète */
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-form input,
+.product-form textarea,
+.product-form select {
+  font-size: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.size-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.size-row button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+
+
+.size-row input {
+  flex: 1;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh; /* ← rend la modale scrollable si trop haute */
+  overflow-y: auto; /* ← active le scroll si nécessaire */
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.save-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #aaa;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.badge-out {
+  color: white;
+  background-color: #c0392b;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 4px;
+}

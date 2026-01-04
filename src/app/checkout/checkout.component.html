@@ -1,0 +1,212 @@
+<div class="stepper-container">
+  <div class="stepper-header">
+    <a class="back-link" routerLink="/cart">← Retour</a>
+    <div class="stepper-logo">
+      <a routerLink="/">
+        <img src="assets/logo.png" alt="Hermès Paris" />
+      </a>
+    </div>
+    <div class="spacer"></div>
+  </div>
+  <div class="stepper">
+    <div class="step">PANIER</div>
+    <div class="step active">LIVRAISON</div>
+    <div class="step">CONFIRMATION</div>
+  </div>
+</div>
+<section *ngIf="step === 'email'" class="checkout-form">
+  <h2>COMPTE</h2>
+  <p>Veuillez entrer votre e-mail pour recevoir un code de confirmation.</p>
+
+  <input
+    type="email"
+    id="email"
+    [(ngModel)]="email"
+    placeholder="yourname@domain.com"
+    [class.invalid]="showError"
+  />
+  <div *ngIf="showError" class="error-message">
+    <small>❗ L’e-mail est requis et doit être valide</small>
+  </div>
+
+  <button (click)="onContinue()" [disabled]="isLoading">
+    {{ isLoading ? 'Envoi en cours...' : 'CONTINUER'}}
+  </button>
+</section>
+
+<!-- === INVITÉ : ÉTAPE 2 - Vérification du code === -->
+<section *ngIf="step === 'verify'" class="checkout-form">
+  <h2>Code de vérification</h2>
+  <p>Nous avons envoyé un code à 6 chiffres à {{ email }}. Veuillez le saisir :</p>
+
+  <input type="text" [(ngModel)]="code" placeholder="Your code" />
+  <button (click)="verifyCode()">VÉRIFIER</button>
+</section>
+
+<!-- === LAYOUT PRINCIPAL === -->
+<div class="checkout-layout" *ngIf="step === 'form'">
+
+  <!-- === COLONNE GAUCHE === -->
+  <div class="checkout-left">
+    <!-- ACCOUNT -->
+    <section class="account-row">
+      <div class="account-label">ACCOUNT</div>
+      <div class="account-email">{{ email }}</div>
+    </section>
+
+    <!-- DELIVERY -->
+    <section class="section-box delivery-section">
+      <div class="account-label">LIVRAISON</div>
+
+      <!-- Onglets -->
+      <div class="delivery-tabs">
+        <div class="tab active">
+          <span class="tab-icon">🚚</span>
+          <span class="tab-label">Livrer à une adresse</span>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE -->
+      <form (ngSubmit)="submitShipping()" #shippingForm="ngForm" class="hermes-delivery-form">
+  <div class="form-grid">
+
+    <!-- Pays -->
+    <div class="form-cell">
+      <select [(ngModel)]="selectedCountry" name="location" (change)="onCountryChange($event)" required>
+        <option value="" disabled selected hidden>Pays *</option>
+        <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+      </select>
+    </div>
+
+    <!-- Civilité -->
+    <div class="form-cell">
+      <select name="title" ngModel required>
+        <option value="" disabled selected hidden>Civilité *</option>
+        <option value="mr">Monsieur</option>
+        <option value="mrs">Madame</option>
+      </select>
+    </div>
+
+    <!-- Prénom -->
+    <div class="form-cell">
+      <input type="text" name="firstName" ngModel required placeholder="Prénom *" />
+    </div>
+
+    <!-- Nom -->
+    <div class="form-cell">
+      <input type="text" name="lastName" ngModel required placeholder="Nom *" />
+    </div>
+
+    <!-- Société -->
+    <div class="form-cell">
+      <input type="text" name="company" ngModel placeholder="Société (optionnel)" />
+    </div>
+
+    <!-- Adresse -->
+    <div class="form-cell double-width">
+      <input type="text" name="address" ngModel required placeholder="Adresse *" />
+    </div>
+
+    <!-- Complément d'adresse -->
+    <div class="form-cell full-width">
+      <input type="text" name="address2" ngModel placeholder="Complément d’adresse" />
+    </div>
+
+    <!-- Ville -->
+    <div class="form-cell">
+      <input type="text" name="city" ngModel required placeholder="Ville *" />
+    </div>
+
+    <!-- Région -->
+    <div class="form-cell">
+      <input type="text" name="state" ngModel required placeholder="Région *" />
+    </div>
+
+    <!-- Code postal -->
+    <div class="form-cell">
+      <input type="text" name="zip" ngModel required placeholder="Code postal *" />
+    </div>
+
+
+    <!-- Numéro de téléphone -->
+  <div class="form-cell">
+  <input
+    type="tel"
+    name="phone"
+    ngModel
+    required
+    [placeholder]="' (' + selectedCountryCode + ')'"
+  />
+</div>
+
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="confirm-order-button" [disabled]="isLoading">
+  {{ isLoading ? 'Traitement...' : 'CONFIRMER LA COMMANDE' }}
+</button>
+  </div>
+</form>
+
+    </section>
+  </div>
+
+  <!-- === COLONNE DROITE : SUMMARY === -->
+<div class="summary-card" [class.expanded]="isSummaryOpen">
+  <!-- Header cliquable -->
+  <div class="summary-toggle" (click)="isSummaryOpen = !isSummaryOpen">
+    <span>SUMMARY</span>
+    <span class="toggle-icon">{{ isSummaryOpen ? '▲' : '▼' }}</span>
+  </div>
+
+  <!-- Produits : affichés uniquement si ouvert -->
+  <div *ngIf="isSummaryOpen" class="summary-products">
+    <p class="item-count">
+      You have {{ cartItems.length }} item{{ cartItems.length > 1 ? 's' : '' }} in your cart.
+    </p>
+    <div *ngFor="let item of cartItems" class="summary-item">
+      <img [src]="item.image" alt="{{ item.name }}" />
+      <div class="details">
+        <div class="name">{{ item.name }}</div>
+        <div class="info">Color: {{ item.color }}</div>
+        <div class="info" *ngIf="item.size">Size: {{ item.size }}</div>
+        <div class="info">Ref. {{ item.reference }}</div>
+        <div class="quantity-control">
+          <button (click)="decreaseQty(item)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="increaseQty(item)">+</button>
+        </div>
+        <div class="price">{{ item.price * item.quantity | currency:'USD' }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Totaux (toujours visibles) -->
+  <div class="summary-totals">
+    <div class="summary-row">
+      <span>SUBTOTAL</span>
+      <span>{{ subtotal | currency:'USD' }}</span>
+    </div>
+    <div class="summary-row">
+      <div>
+    <span>SHIPPING</span><br />
+    <small *ngIf="selectedCountry === 'Morocco'">
+      Livraison à domicile (Maroc)
+    </small>
+    <small *ngIf="selectedCountry && selectedCountry !== 'Morocco'">
+      Livraison standard internationale
+    </small>
+  </div>
+
+      <span>{{ shippingCost | currency:'USD' }}</span>
+    </div>
+    <div class="summary-row total-row">
+      <span>TOTAL</span>
+      <span>{{ subtotal + shippingCost | currency:'USD' }}</span>
+
+    </div>
+  </div>
+</div>
+
+
+</div>

@@ -1,0 +1,62 @@
+<div class="hermes-container">
+
+  <!-- Section Vidéo -->
+  <div class="hermes-video-section">
+    <video #promoVideo class="hermes-promo-video" muted loop playsinline>
+      <source src="./assets/video0.mp4" type="video/mp4">
+      <!-- Fallback option -->
+      <div class="video-fallback">
+        <button (click)="playVideo()">Lire la vidéo</button>
+      </div>
+    </video>
+    <div class="hermes-video-overlay">
+      <h2>NOUVELLE COLLECTION ÉTÉ</h2>
+    </div>
+  </div>
+
+  <!-- Première partie des produits (10 premiers) -->
+  <div class="hermes-products">
+    <a *ngFor="let product of products.slice(0, 10)" 
+       [routerLink]="['/product', product.id]" 
+       class="hermes-product-card" 
+       style="text-decoration: none; color: inherit;">
+
+      <div class="hermes-product-image-container">
+        <span *ngIf="isNew(product)" class="tag-nouveaute">Nouveauté</span>
+        <img [src]="product.image1" [alt]="product.name" class="hermes-product-image front-image">
+        <img [src]="product.image2" [alt]="product.name" class="hermes-product-image back-image">
+      </div>
+      <div class="hermes-product-info">
+        <h3 class="hermes-product-name">{{product.name}}</h3>
+      </div>
+
+    </a>
+  </div>
+
+  <!-- Image avec texte superposé -->
+  <div class="hermes-image-with-text">
+    <div class="hermes-image-container">
+      <img src="./assets/decouver.jpg" alt="Collection été Hermès" class="hermes-main-image">
+    </div>
+  </div>
+
+  <!-- Deuxième partie des produits (à partir du 11ème) -->
+  <div class="hermes-products">
+    <a *ngFor="let product of products.slice(10)" 
+       [routerLink]="['/product', product.id]" 
+       class="hermes-product-card" 
+       style="text-decoration: none; color: inherit;">
+
+      <div class="hermes-product-image-container">
+        <span *ngIf="isNew(product)" class="tag-nouveaute">Nouveauté</span>
+        <img [src]="product.image1" [alt]="product.name" class="hermes-product-image front-image">
+        <img [src]="product.image2" [alt]="product.name" class="hermes-product-image back-image">
+      </div>
+      <div class="hermes-product-info">
+        <h3 class="hermes-product-name">{{product.name}}</h3>
+      </div>
+
+    </a>
+  </div>
+
+</div>

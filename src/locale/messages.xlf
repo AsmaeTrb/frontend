@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7183208409466550838" datatype="html">
+        <source>Lire la vidéo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8729561947161876829" datatype="html">
+        <source>NOUVELLE COLLECTION ÉTÉ</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6992725157188046031" datatype="html">
+        <source>Nouveauté</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="931756726152577792" datatype="html">
+        <source>Collection été Hermès</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5829380065548494521" datatype="html">
+        <source>Rechercher</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2332866508838027590" datatype="html">
+        <source>Compte</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6446192435648820310" datatype="html">
+        <source>Déconnexion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4123744616703386227" datatype="html">
+        <source>Panier</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4768255879551855175" datatype="html">
+        <source>Femmes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2713313227650858244" datatype="html">
+        <source>Hommes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7349393105450035216" datatype="html">
+        <source>Enfants</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7474365020053429430" datatype="html">
+        <source>BIJOUTERIE ET MONTRES</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="671106503328243572" datatype="html">
+        <source>Maison</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

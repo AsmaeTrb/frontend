@@ -1,0 +1,33 @@
+.account-success-container {
+  margin: 100px auto;
+  max-width: 1200px;
+  background-color: #f9f5ef;
+  padding: 180px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Helvetica Neue', sans-serif;
+  margin-top: 150px;
+}
+.confirmation-text {
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.account-success-container button {
+  padding: 10px 20px;
+  border: 1px solid #333;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.account-success-container button:hover {
+  background-color: #f2f2f2;
+}

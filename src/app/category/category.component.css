@@ -1,0 +1,108 @@
+.hermes-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* plus grand que 250px */
+    gap: 40px; /* plus de gap entre les cartes */
+    padding: 40px 40px; /* marge en haut et en bas plus grande */
+    margin-top: 70px; /* espace entre nav et les produits */
+}
+
+.hermes-product-card {
+    
+    cursor: pointer;
+    background-color: white; /* fond blanc comme le site Hermès */
+}
+
+
+.hermes-product-image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* format plus haut (style Hermès) */
+    overflow: hidden;
+}
+
+.hermes-product-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* important ! pas "contain", sinon ça laisse de l'espace */
+    object-position: top center; /* pour bien afficher la tête */
+    transition: opacity 0.5s ease;
+}
+
+.front-image {
+    opacity: 1;
+    z-index: 1;
+}
+
+.back-image {
+    opacity: 0;
+    z-index: 2;
+}
+
+.hermes-product-card:hover .front-image {
+    opacity: 0;
+}
+
+.hermes-product-card:hover .back-image {
+    opacity: 1;
+}
+
+.hermes-product-info {
+    padding: 10px 5px;
+    text-align: left;
+}
+
+.hermes-product-name {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.hermes-product-badges {
+    margin-top: 10px;
+}
+
+.urgent {
+    color: red;
+    font-weight: bold;
+}
+.category-banner {
+  margin-top: 120px;
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.category-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+
+
+
+/* ✅ lien noir en bas de l’image */
+.banner-title-overlay {
+  position: absolute;
+  bottom: 40px;        /* ↙ aligné en bas */
+  left: 40px;          /* ↖ aligné à gauche */
+}
+
+.scroll-link {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.scroll-link:hover {
+  opacity: 0.7;
+}

@@ -1,0 +1,390 @@
+[
+  {
+    "id": "2",
+    "name": "Polo boutonné à manches courtes avec broderie H",
+    "price": 159,
+    "color": "Bleu marine",
+    "description": "Polo boutonné à manches courtes avec broderie H...",
+    "image1": "./assets/im11.jpg",
+    "image2": "./assets/im12.jpg",
+    "category": "hommes",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 6
+      },
+      {
+        "size": "M",
+        "quantity": 10
+      },
+      {
+        "size": "L",
+        "quantity": 7
+      },
+      {
+        "size": "XL",
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Montre en acier, mouvement extra-plat Hermès H1950",
+    "price": 7800,
+    "color": "Argenté",
+    "description": "Montre en acier, mouvement extra-plat...",
+    "image1": "./assets/im15.jpg",
+    "image2": "./assets/im16.jpg",
+    "category": "BIJOUTERIE ET MONTRES",
+    "sizes": [
+      {
+        "size": "16-18,5 cm",
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Chaussons en seersucker",
+    "price": 65,
+    "color": "Blanc et bleu",
+    "description": "Chaussons en seersucker...",
+    "image1": "./assets/im19.jpg",
+    "image2": "./assets/im20.jpg",
+    "category": "enfants",
+    "sizes": [
+      {
+        "size": "19",
+        "quantity": 6
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "T-shirt cropped en jersey de coton uni",
+    "price": 79.99,
+    "color": "Blanc",
+    "description": "Un t-shirt cropped en jersey de coton uni...",
+    "image1": "./assets/im3.jpg",
+    "image2": "./assets/im4.jpg",
+    "category": "femmes",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 6
+      },
+      {
+        "size": "M",
+        "quantity": 10
+      },
+      {
+        "size": "L",
+        "quantity": 4
+      },
+      {
+        "size": "XL",
+        "quantity": 2
+      },
+      {
+        "size": "XXL",
+        "quantity": 0
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Robe prairie en gaze avec motif « Mosaïque »",
+    "price": 349.99,
+    "color": "Blanc",
+    "description": "Une robe prairie en gaze avec motif « Mosaïque »...",
+    "image1": "./assets/im5.jpg",
+    "image2": "./assets/im6.jpg",
+    "category": "femmes",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 7
+      },
+      {
+        "size": "M",
+        "quantity": 9
+      },
+      {
+        "size": "L",
+        "quantity": 5
+      },
+      {
+        "size": "XL",
+        "quantity": 2
+      },
+      {
+        "size": "XXL",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Jeu de 9 cubes en érable imprimé",
+    "price": 120,
+    "color": "Multicolore",
+    "description": "Jeu de 9 cubes en érable imprimé...",
+    "image1": "./assets/im17.jpg",
+    "image2": "./assets/im18.jpg",
+    "category": "enfants",
+    "sizes": [
+      {
+        "size": "Taille unique",
+        "quantity": 10
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Bracelet jonc en veau Epsom et métal",
+    "price": 450,
+    "color": "Or rose",
+    "description": "Bracelet jonc en veau Epsom et métal...",
+    "image1": "./assets/im7.jpg",
+    "image2": "./assets/im8.jpg",
+    "category": "BIJOUTERIE ET MONTRES",
+    "sizes": [
+      {
+        "size": "T1",
+        "quantity": 4
+      },
+      {
+        "size": "T2",
+        "quantity": 6
+      },
+      {
+        "size": "T3",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Pantalon Saint Germain en serge de coton stretch",
+    "price": 299.99,
+    "color": "Beige",
+    "description": "Pantalon Saint Germain en serge de coton stretch...",
+    "image1": "./assets/im9.jpg",
+    "image2": "./assets/im10.jpg",
+    "category": "hommes",
+    "sizes": [
+      {
+        "size": "38",
+        "quantity": 5
+      },
+      {
+        "size": "40",
+        "quantity": 8
+      },
+      {
+        "size": "42",
+        "quantity": 3
+      },
+      {
+        "size": "44",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Chemise en popeline compacte",
+    "price": 210,
+    "color": "Blanc",
+    "description": "Chemise en popeline compacte...",
+    "image1": "./assets/im13.jpg",
+    "image2": "./assets/im14.jpg",
+    "category": "hommes",
+    "sizes": [
+      {
+        "size": "38",
+        "quantity": 50
+      },
+      {
+        "size": "39",
+        "quantity": 7
+      },
+      {
+        "size": "40",
+        "quantity": 6
+      },
+      {
+        "size": "41",
+        "quantity": 4
+      },
+      {
+        "size": "42",
+        "quantity": 3
+      },
+      {
+        "size": "43",
+        "quantity": 2
+      },
+      {
+        "size": "44",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "name": "Cardigan cache-cœur imprimé « En Désordre à Fleurs »",
+    "price": 2400,
+    "color": "Multicolore (rose, blanc, bleu)",
+    "description": "Un cardigan cache-cœur en maille de soie résille imprimée « En Désordre à Fleurs » (100 % soie)\n\n- Noué devant\n- Motif « En Désordre à Fleurs » texturé\n\nCe modèle taille normalement, nous vous conseillons de prendre votre taille habituelle.",
+    "image1": "./assets/im21.jpg",
+    "image2": "./assets/im22.jpg",
+    "category": "femmes",
+    "origin": "Italie",
+    "sizes": [
+      {
+        "size": "36",
+        "quantity": 10
+      },
+      {
+        "size": "38",
+        "quantity": 2
+      },
+      {
+        "size": "40",
+        "quantity": 5
+      }
+    ],
+    "id": "12"
+  },
+  {
+    "id": "11",
+    "name": "Gavroche 45",
+    "sizes": [
+      { "size": "Taille Unique", "quantity": 10 }
+    ],
+    "price": 240,
+    "description": "Gavroche en twill 100 % soie roulotté à la main. Facile et versatile, ce petit format iconique se porte dans les cheveux, autour du cou ou sur un sac !",
+    "image1": "./assets/im27.jpg",
+    "image2": "./assets/im28.jpg",
+    "category": "BIJOUTERIE ET MONTRES",
+    "color": "crème",
+    "origin": "France"
+  },
+  {
+    "id": "19",
+    "name": "Robe chemise",
+    "sizes": [
+      { "size": "34", "quantity": 5 },
+      { "size": "36", "quantity": 5 },
+      { "size": "38", "quantity": 5 },
+      { "size": "40", "quantity": 5 },
+      { "size": "42", "quantity": 5 },
+      { "size": "44", "quantity": 5 }
+    ],
+    "price": 2800,
+    "description": "Robe chemise en twill de coton avec col, boutons-pression palladiés, poches plaquées, taille cintrée ajustable, bas évasé. Fabriqué en France.",
+    "image1": "./assets/im25.jpg",
+    "image2": "./assets/im26.jpg",
+    "category": "femmes",
+    "color": "blanc",
+    "origin": "France"
+  },
+  {
+    "id": "16",
+    "name": "Mini-jupe à pli imprimé « Guépards et Palmettes »",
+    "sizes": [
+      { "size": "34", "quantity": 5 },
+      { "size": "36", "quantity": 5 },
+      { "size": "38", "quantity": 5 },
+      { "size": "40", "quantity": 5 }
+    ],
+    "price": 1900,
+    "description": "Une mini-jupe à pli en carré de soie imprimé « Guépards et Palmettes » (100 % soie). Ceinture élastiquée en satin au dos. Pli creux milieu devant.",
+    "image1": "./assets/im23.jpg",
+    "image2": "./assets/im24.jpg",
+    "category": "femmes",
+    "color": "blanc sel",
+    "origin": "France"
+  },
+  {
+    "id": "14",
+    "name": "T-shirt mini patch cuir « H'Cheval »",
+    "sizes": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 5 },
+      { "size": "L", "quantity": 5 },
+      { "size": "XL", "quantity": 2 },
+      { "size": "XXL", "quantity": 2 }
+    ],
+    "price": 650,
+    "description": "T-shirt « H'Cheval » en coton (100 % coton) avec col rond, manches courtes, et mini patch « H'Cheval » en cuir d'agneau lavable.",
+    "image1": "./assets/im29.jpg",
+    "image2": "./assets/im30.jpg",
+    "category": "hommes",
+    "color": "céladon",
+    "origin": "Italie"
+  },
+  {
+    "id": "15",
+    "name": "Ceinture Romain 25",
+    "sizes": [
+      { "size": "75", "quantity": 3 },
+      { "size": "80", "quantity": 5 },
+      { "size": "90", "quantity": 3 },
+      { "size": "95", "quantity": 3 },
+      { "size": "100", "quantity": 2 }
+    ],
+    "price": 795,
+    "description": "Ceinture en vache Hunter, boucle en métal palladié. Affinée, la ceinture Romain se réinvente en largeur 25 mm.",
+    "image1": "./assets/im31.jpg",
+    "image2": "./assets/im32.jpg",
+    "category": "hommes",
+    "color": "rouge sellier",
+    "origin": "France"
+  },
+  {
+    "id": "17",
+    "name": "Cravate Façonnée H",
+    "sizes": [
+      { "size": "Taille Unique", "quantity": 10 }
+    ],
+    "price": 245,
+    "description": "Cravate en twill 100 % soie, assemblée à la main. Une infinité de « H » se révèle à travers le jeu de tissage jacquard de cette cravate.",
+    "image1": "./assets/im33.jpg",
+    "image2": "./assets/im34.jpg",
+    "category": "hommes",
+    "color": "marine",
+    "origin": "France"
+  },
+  {
+    "id": "18",
+    "name": "Robe longue drapée motif « Mosaïque »",
+    "sizes": [
+      { "size": "34", "quantity": 5 },
+      { "size": "36", "quantity": 5 },
+      { "size": "38", "quantity": 5 }
+    ],
+    "price": 4400,
+    "description": "Une robe longue drapée en soie jacquard avec motif « Mosaïque » (100 % soie). Drapé diagonal sur le devant avec plis sur l'épaule. Fermeture épaule droite avec boutons cachés en nacre gravés Clou de Selle. Fermeture côté droit avec zip invisible. Fente côté gauche. Dos nu avec drapé diagonal. Doublure en soie quadrillée.",
+    "image1": "./assets/im35.jpg",
+    "image2": "./assets/im36.jpg",
+    "category": "femmes",
+    "color": "noir",
+    "origin": "France"
+  },
+  {
+    "id": "13",
+    "name": "Semainier de chaussettes bébé Cabriole",
+    "sizes": [
+      { "size": "18", "quantity": 5 },
+      { "size": "21", "quantity": 5 }
+    ],
+    "price": 210,
+    "description": "Semainier de chaussettes bébé en jersey imprimé. Composition : 67 % coton, 18 % polyamide, 12 % cachemire et 3 % élasthanne. Convient aux enfants âgés de 0 à 9 mois.",
+    "image1": "./assets/im37.jpg",
+    "image2": "./assets/im38.jpg",
+    "category": "enfants",
+    "color": "multicolore",
+    "origin": "France"
+  }
+]

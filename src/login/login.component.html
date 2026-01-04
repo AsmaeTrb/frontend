@@ -1,0 +1,71 @@
+<div class="login-wrapper">
+  <!-- Rectangle titre COMPTE -->
+  <div class="account-box">
+    <p>COMPTE</p>
+  </div>
+
+  <!-- Rectangle formulaire -->
+  <div class="login-container">
+    <!-- Étape Email -->
+    <form *ngIf="!isEmailVerified" (ngSubmit)="verifyEmail()" #emailForm="ngForm" class="login-form">
+      <label for="email">Veuillez saisir votre adresse e-mail pour accéder ou créer votre compte</label>
+      
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        placeholder="votre.nom@domaine.com"
+        class="login-input"
+      />
+
+      <p class="hint">Format attendu : votre.nom&#64;domaine.com</p>
+
+      <button 
+        type="submit" 
+        class="login-button" 
+        [disabled]="emailForm.invalid || isLoading"
+      >
+        {{isLoading ? 'Vérification en cours...' : 'CONTINUER'}}
+      </button>
+    </form>
+
+    <!-- Étape Mot de passe -->
+    <form *ngIf="isEmailVerified" (ngSubmit)="submitPassword()" #passwordForm="ngForm" class="login-form">
+      <label>Bienvenue ! Veuillez saisir votre mot de passe pour {{email}}</label>
+      
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        placeholder="Votre mot de passe"
+        class="login-input"
+      />
+
+      <button 
+        type="submit" 
+        class="login-button" 
+        [disabled]="passwordForm.invalid || isLoading"
+      >
+        {{isLoading ? 'Connexion en cours...' : 'SE CONNECTER'}}
+      </button>
+
+      <button 
+        type="button" 
+        (click)="backToEmail()"
+        class="login-button"
+        style="background-color: transparent; color: #333; border: 1px solid #333;"
+      >
+        RETOUR
+      </button>
+    </form>
+
+    <!-- Message d'erreur -->
+    <div *ngIf="errorMessage" style="color: red; width: 500px; text-align: left; margin-top: 10px;">
+      {{errorMessage}}
+    </div>
+  </div>
+</div>
